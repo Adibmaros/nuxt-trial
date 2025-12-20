@@ -19,4 +19,14 @@ export default defineNuxtConfig({
   },
 
   modules: ["nuxt-auth-utils"],
+  runtimeConfig: {
+    session: {
+      name: "nuxt-session",
+      password: process.env.NUXT_SESSION_PASSWORD || "", // min 32 karakter
+      cookie: {
+        sameSite: "lax", // penting untuk production
+        secure: process.env.NODE_ENV === "production", // true di production
+      },
+    },
+  },
 });
