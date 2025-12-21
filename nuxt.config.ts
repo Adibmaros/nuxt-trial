@@ -19,6 +19,12 @@ export default defineNuxtConfig({
   },
 
   modules: ["nuxt-auth-utils"],
+  // @ts-ignore
+  loadingIndicator: {
+    name: "circle", // atau 'bar', 'pulse'
+    color: "#3b82f6",
+    throttle: 200,
+  },
   runtimeConfig: {
     session: {
       name: "nuxt-session",
